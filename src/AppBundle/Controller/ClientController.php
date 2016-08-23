@@ -77,6 +77,12 @@ class ClientController extends Controller
         //Redirection vers client
         return $this->redirectToRoute('clients');
    }
-    
+/**
+* @Route("/clients/form", name="form")
+*/
+   public function formAction() 
+   {
+    return $this->render('client/form.html.twig', array());
+   }
 }
      

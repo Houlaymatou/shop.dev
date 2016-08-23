@@ -11,6 +11,11 @@
     </head>
     <body">
         <div class="container well">
+        <div>
+            <a href="{{ path('homepage') }}" class="btn btn-success ">Acceuil</a>
+            <a href="{{ path('clients') }}" class="btn btn-default ">Clients</a>
+            <a href="{{ path('form') }}" class="btn btn-default ">Formulaire client</a>
+        </div>
         {% block body %}
          <h1>Titre de niveau 1</h1>
         {% block menu %}{% endblock %}
