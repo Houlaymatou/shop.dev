@@ -1,8 +1,9 @@
 {% extends "::base.html.twig" %}
 {% block body %}
 <p>{{title}}<p>
+<a href="{{path('homepage')}}" class="btn btn-success btn-lg">Acceuil</a>
 <div class="jumbotron col-md-8">
-<form action="clients/new" method="post">
+<form action="clients/new" method="post" class="form-inline">
   <div class="form-group">
     <label for="name" class="label-control ">Nom:</label>
     <input type="text" class="form-control" id="name" name=name placeholder="Nom">
@@ -12,12 +13,16 @@
     <input type="text" class="form-control" id="age" name="age" placeholder="Age">
   </div>
   <input type="submit" class="btn btn-primary" name="register" value="Validez">
+
 </form>
 <br>
-<ul>
+<table class="table">
 {% for client in clients %}
-	<li>{{client.name}} <span>{{client.age}} ans</span></li>
+	<tr><td>{{client.name}} <span>{{client.age}} ans </span></td> <td> 
+	<!-- Methode1 pour afficher un lien<a href="/clients/{{client.id}}/delete" class="btn btn-warning">Delete</a>-->
+	<a href="{{ path('client_delete', {'id':client.id}) }}" class="btn btn-warning">Delete</a>	<!-- Methode aveutilisation du mot clé path pour afficher un lin -->
+	</td></tr> 
 {%endfor%}
-</ul>
+</table>
 </div>
 {% endblock%}
