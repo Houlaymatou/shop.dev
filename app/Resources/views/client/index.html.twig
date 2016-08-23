@@ -1,0 +1,23 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+<p>{{title}}<p>
+<div class="jumbotron col-md-8">
+<form action="clients/new" method="post">
+  <div class="form-group">
+    <label for="name" class="label-control ">Nom:</label>
+    <input type="text" class="form-control" id="name" name=name placeholder="Nom">
+  </div>
+  <div class="form-group">
+    <label for="age" class="label-control ">Age:</label>
+    <input type="text" class="form-control" id="age" name="age" placeholder="Age">
+  </div>
+  <input type="submit" class="btn btn-primary" name="register" value="Validez">
+</form>
+<br>
+<ul>
+{% for client in clients %}
+	<li>{{client.name}} <span>{{client.age}} ans</span></li>
+{%endfor%}
+</ul>
+</div>
+{% endblock%}
