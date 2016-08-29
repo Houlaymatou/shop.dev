@@ -1,16 +1,31 @@
-{% extends "::base.html.twig" %}
+{% extends "admin.html.twig" %}
 
-{% block title %}Admin{% endblock %}
 {% block body %}
-<div class="well">
-<h2>Titre de niveau2</h2>
 
-{% block menu %}
-<ul class="menu nav nav-pills">
-	<li>Menu1</li>
-	<li>Menu2</li>
-	<li>Menu3</li>
-</ul>
-{% endblock %}
+<h2>Admin: Categorie</h2>
+<div class="row">
+<form action="" method="post" class="form-inline">
+   <div class="form-group">
+    <label for="name" class="label-control ">Nom</label>
+    <input type="text" class="form-control" id="name" name="name">
+  </div>
+  <input type="submit" class="btn btn-primary" name="register" value="Save">
+
+</form>
+<hr>
+ 
+ <div class="col-md-6">
+ <h3 class="text-primary">{{title}}</h3>
+<table class="table" >
+{% for category in categories %}
+ <tr>
+ <td>{{category.name}}</td> 
+ <td><a href="{{path('category_edit',{'id':category.id})}}">Edit</a></td>
+ <td><a id="{{category.id}}" class="delete" href="#">delete</a></td> 
+ </tr> 
+{% endfor %}
+</table>
 </div>
+</div>
+<script type="text/javascript" src="{{asset('js/script.js')}}"></script>
 {% endblock %}
