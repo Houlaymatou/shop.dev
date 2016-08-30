@@ -69,28 +69,5 @@ class Category
     {
         return $this->name;
     }
-
-    /**
-     * Set url
-     *
-     * @param string $url
-     *
-     * @return Category
-     */
-    public function setUrl($url)
-    {
-        $this->url = $url;
-
-        return $this;
-    }
-
-    /**
-     * Get url
-     *
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
 }
+

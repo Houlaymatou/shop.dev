@@ -1,13 +1,17 @@
 {% extends "admin.html.twig" %}
 
 {% block body %}
-
+<a class="btn btn-default" href="{{path('products_list')}}">Products</a>
 <h2>Admin: Categorie</h2>
 <div class="row">
 <form action="" method="post" class="form-inline">
    <div class="form-group">
     <label for="name" class="label-control ">Nom</label>
     <input type="text" class="form-control" id="name" name="name">
+  </div>
+  <div class="form-group">
+    <label for="url" class="label-control ">Url</label>
+    <input type="text" class="form-control" id="url" name="url">
   </div>
   <input type="submit" class="btn btn-primary" name="register" value="Save">
 

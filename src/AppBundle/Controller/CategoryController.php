@@ -38,6 +38,7 @@ class CategoryController extends Controller
         $category = new Category();
         //$category->setName($_POST['name']) : accès à la super global $_POST
         $category->setName($params['name']);
+        $category->setUrl($params['url']);
         $em = $this->getDoctrine()->getManager();
         $em->persist($category); 
         $em->flush();
@@ -78,6 +79,7 @@ class CategoryController extends Controller
        //Methode2
         $params = $request->request->all();
         $category-> setName($params['name']);
+        $category->setUrl($params['url']);
         $em = $this->getDoctrine()->getManager();
         $em->persist($category); 
         $em->flush();

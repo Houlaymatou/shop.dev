@@ -1,0 +1,21 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+<a class="btn btn-default" href="{{path('categories_list')}}">Category</a>
+	
+<div class="form-group">{{ form_start(form) }}</div>
+<div class="form-group">{{ form_end(form) }}</div>
+<hr>
+<h2>Liste des produits </h2>
+<table class="table">
+{% for p in products %}
+<tr>
+	<td>{{p.name}}</td>
+	<td>{{p.presentation}}</td>
+	<td>{{p.price}}</td>
+	<td>{{p.stock}}</td>
+	<td>{{p.details}}</td>
+	
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
