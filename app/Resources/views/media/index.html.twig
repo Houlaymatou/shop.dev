@@ -1,0 +1,18 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+<div class="row">
+<div class="col-md-8">
+{{title}}
+<table class="table">
+{% for m in medias %}
+<tr>
+	<td>{{m.file}}</td>
+ <td><img src="{{asset('files/')}}{{m.file}}"></td>
+ <td><a class="btn" href="">delete</a></td>
+ <td><a class="btn" href="">edit</a></td>
+</tr>	
+{% endfor %}
+</table>
+</div>
+</div>
+{% endblock %}

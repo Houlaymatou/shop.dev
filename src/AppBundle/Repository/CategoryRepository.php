@@ -15,7 +15,7 @@ class CategoryRepository extends \Doctrine\ORM\EntityRepository
 		return $this->getEntityManager()
 		->createQuery('
 				SELECT c FROM AppBundle:Category c
-				ORDER BY c.name ASC
+				ORDER BY c.name DESC
 			')
 		->getResult();
 	}

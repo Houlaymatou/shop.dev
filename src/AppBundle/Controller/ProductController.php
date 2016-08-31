@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Entity\Product;
 use AppBundle\Form\ProductType;
+use AppBundle\Entity\Media;
 
 class ProductController extends Controller
 {
@@ -34,6 +35,17 @@ class ProductController extends Controller
         $products = $this->getDoctrine()
         ->getRepository('AppBundle:Product')
         ->findAll();
+
+        //On veut récupèrer tous les produits avec les medias associées
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery("
+        	SELECT p FROM AppBundle:Product p 
+        	JOIN AppBundle:Media m 
+        	WHERE p.id = m.product
+        	");
+        $productsMedia = $query->getResult();
+        //var_dump($productsMedia);
+
 		return $this->render('product/index.html.twig', array(
 				'form' => $form->createView(),
 				'products' => $products,

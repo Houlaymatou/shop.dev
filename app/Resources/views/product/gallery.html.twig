@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div>
+ {% for product in products %}
+  {{include('product/teaser.html.twig', {'product':product})}}
+ {% endfor %}
+</div>
+{% endblock %}

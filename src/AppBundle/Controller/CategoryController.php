@@ -19,7 +19,7 @@ class CategoryController extends Controller
     {  //Récupèration des données categories
       $categories = $this->getDoctrine()
                 ->getRepository('AppBundle:Category')
-                ->findAllSorted();
+                ->findAll();
  
         return $this->render('category/index.html.twig', array(
         'title' => 'Categories',

@@ -36,7 +36,13 @@ class DefaultController extends Controller
             $products = $this->getDoctrine()
              ->getRepository('AppBundle:Product')
              ->findByCategory($category[0]->getId());
-             var_dump($products); 
+             
+             //var_dump($products); 
+             //on retourne un template pour l'affichage des produits
+             return $this->render('product/gallery.html.twig', array(
+                'products' => $products,
+
+                ));
         
          }
         
